@@ -49,6 +49,21 @@ function entregarDinero()
   }
 }
 
+var total = 0;
+function saldo() {
+  total = 0;
+  var saldo = 0;
+  for (const v of caja) {
+    total += v.valor * v.cantidad;
+    resultado.innerHTML = "Su saldo es: $" + total + "<hr />";
+    saldo += v.valor * v.cantidad;
+    resultado.innerHTML = "Su saldo es: $" + saldo + "<hr />";
+  }
+}
+
+
+
+
 var caja = [];
 var entregado = [];
 caja.push( new Billete(100, 5) );
@@ -56,6 +71,7 @@ caja.push( new Billete(50, 10) );
 caja.push( new Billete(20, 5) );
 caja.push( new Billete(10, 10) );
 caja.push( new Billete(5, 5) );
+
 var dinero = 0;
 var div = 0;
 var papeles = 0;
@@ -64,11 +80,6 @@ var resultado = document.getElementById("resultado");
 var b = document.getElementById("extraer");
 b.addEventListener("click", entregarDinero);
 
-
-
-
-
-
-
-
-
+var s = document.getElementById("saldo");
+var s = document.getElementById("saldo"); //boton de consultar saldo
+s.addEventListener("click", saldo);
